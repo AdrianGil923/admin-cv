@@ -1,16 +1,66 @@
-<h3> <b> admin-Cv App </b> </h3>
-
+<h3><b>admin-Cv App</b></h3>
 <nav>
- <ul>
-	<li><a routerLink="/header"> header </a>
-	</li>
-	<li><a routerLink="/workexperience"> work-experience </a>
-	</li>
-        <li><a routerLink="/education"> education </a>
-        </li>
-        <li><a routerLink="/skills"> skills </a>
-        </li>
-        <li><a routerLink="/languages"> languages </a>
-        </li>
-	<li><a routerLink="/interests"> interests </a>
-        </li>
+  <ul>
+    <li><a routerLink="/header">header</a></li>
+    <li><a routerLink="/workexperience">work-experience</a></li>
+    <li><a routerLink="/education">education</a></li>
+    <li><a routerLink="/certificates">certificates</a></li>
+    <li><a routerLink="/skills">skills</a></li>
+    <li><a routerLink="/languages">languages</a></li>
+    <li><a routerLink="/interests">interests</a></li>
+  </ul>
+</nav>
+
+<router-outlet></router-outlet>
+
+<!-- CSS -->
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+  }
+
+  h3 {
+    background-color: yellow; /* Fondo amarillo */
+    color: red;               /* Texto rojo */
+    padding: 10px;            /* Espaciado interno */
+    border-radius: 5px;       /* Esquinas redondeadas */
+    text-align: center;       /* Centrado del texto */
+  }
+
+  nav {
+    background-color: #66cc66; /* Color verde claro */
+    padding: 10px;
+    text-align: center;
+    margin: 0; /* Eliminar cualquier margen */
+    box-shadow: none; /* Eliminar sombra que podría crear una separación visual */
+  }
+
+  nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0; /* Eliminar margen extra */
+  }
+
+  nav ul li {
+    display: inline;
+    margin: 0 15px;
+  }
+
+  nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    padding: 10px;
+    border-radius: 4px;
+  }
+
+  nav ul li a:hover {
+    background-color: #4d9e4d; /* Color verde más oscuro para el hover */
+  }
+
+ 
+</style>
+
