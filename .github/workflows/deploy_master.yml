@@ -1,4 +1,4 @@
-name: CI/CD deploy master
+name: CI/CD deploy master 
 on: 
   #push:
     #branches: [ "master"]
