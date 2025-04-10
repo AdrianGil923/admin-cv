@@ -1,1 +1,155 @@
-<p>admin-languages works!</p>
+<div class="componente">
+    <div class="container color-dark">
+        <div class="col">
+            <p class="titulo">Languages items</p>
+        </div>
+    </div>
+
+    <div class="container color-light form">
+        <div class="col">
+            <form>
+                <input type="text" class="txt" name="startDate" placeholder=" "
+                    [(ngModel)]="myLanguages.espaniol"> <br>
+                <input type="text" class="txt" name="endDate" placeholder=" "
+                    [(ngModel)]="myLanguages.english"><br>
+
+                <input type="submit" class="btn" value="{{ btnTxt }}" (click)="agregarLanguages()">
+            </form>
+        </div>
+
+        <div class="col">
+            <p class="life-container" *ngFor="let lan of languagues">
+               <input type="submit" class="btn" value="update" (click)='confirmUpdate(lan.id!)'>
+                <input type="submit" class="btn" value="delete" (click)='confirmDelete(lan.id!)'>
+               
+                {{lan.espaniol}} – {{lan.english}}
+            </p>
+        </div>
+    </div>
+</div>
+
+<!-- CSS -->
+<style>
+    /* General styles */
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        font-family: 'Raleway', Arial, sans-serif;
+        background: #e0f7fa;
+        padding: 20px;
+        color: #333;
+    }
+
+    .container {
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    /* Dark container */
+    .color-dark {
+        background-color: #2c3e50;
+        color: white;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .titulo {
+        font-size: 24px;
+        font-weight: bold;
+        text-align: center;
+        margin-bottom: 15px;
+    }
+
+    /* Light container with golden background */
+    .color-light {
+        background-color: #ffd700; /* Dorado */
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+        margin-top: 20px;
+    }
+
+    /* Form Styles */
+    .form {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+        justify-content: space-between;
+    }
+
+    .col {
+        width: 100%;
+    }
+
+    .txt {
+        width: 100%;
+        padding: 10px;
+        margin: 8px 0;
+        border: 2px solid #ddd;
+        border-radius: 6px;
+        font-size: 14px;
+        transition: all 0.3s ease;
+    }
+
+    .txt:focus {
+        border-color: #66cc66;
+        box-shadow: 0 0 10px rgba(102, 204, 102, 0.3);
+    }
+
+    /* Button Styles */
+    .btn {
+        width: 100%;
+        padding: 12px;
+        background-color: #66cc66;
+        color: white;
+        font-size: 14px;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    .btn:hover {
+        background-color: #4d9e4d;
+    }
+
+    /* Dynamic button styles for update and delete */
+    .update-btn {
+        background-color: #4CAF50; /* Verde */
+    }
+
+    .update-btn:hover {
+        background-color: #45a049;
+    }
+
+    .delete-btn {
+        background-color: #f44336; /* Rojo */
+    }
+
+    .delete-btn:hover {
+        background-color: #e53935;
+    }
+
+    /* List item container */
+    .life-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 15px;
+        font-size: 16px;
+        border-bottom: 1px solid #ddd;
+        padding-bottom: 10px;
+    }
+
+    .life-container input[type="submit"] {
+        width: auto;
+        margin-right: 8px;
+    }
+
+</style>
+
